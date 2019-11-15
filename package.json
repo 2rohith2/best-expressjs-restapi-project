@@ -1,0 +1,26 @@
+{
+  "name": "heyo-backend",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "npx supervisor ./bin/www",
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "helmet": "^3.21.2",
+    "lodash": "^4.17.15",
+    "moment": "^2.24.0",
+    "multer": "^1.4.2",
+    "winston": "^3.2.1",
+    "winston-daily-rotate-file": "^4.2.1"
+  },
+  "description": "This project is for Backend Service for Heyo.",
+  "main": "app.js",
+  "author": "Rohith Kumar E S",
+  "license": "ISC"
+}
