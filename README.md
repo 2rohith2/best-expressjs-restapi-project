@@ -18,16 +18,19 @@
 
 ## Used Packages 📦
 
- 1. Bcrypt: A library to help you hash passwords.
- 2. Body-Parser: Parse incoming request bodies in a middleware before your handlers, available under the `req.body` property. 
- 3. Compression: HTTP response Compressor
- 4. Express: Fast, unopinionated, minimalist web framework for [node](http://nodejs.org/). 
- 5. Helmet: Helmet helps you secure your Express apps by setting various HTTP headers.
- 6. Lodash - A modern JavaScript utility library delivering modularity, performance & extras.
- 7. MomentJs - A lightweight JavaScript date library for parsing, validating, manipulating, and formatting dates.
- 8. Multer - Multer is a node.js middleware for handling `multipart/form-data`, which is primarily used for uploading files
- 9. winston - It is designed to be a simple and universal logging library.
- 10. winston-daily-rotate-file - For log file rotation on a daily basis.
+ 1. Babel: A toolchain that is mainly used to convert ECMAScript 2015+ code into a backwards compatible version of JavaScript.
+ 2. Bcrypt: A library to help you hash passwords.
+ 3. Body-Parser: Parse incoming request bodies in a middleware before your handlers, available under the `req.body` property. 
+ 4. Compression: HTTP response Compressor
+ 5. Express: Fast, unopinionated, minimalist web framework for node. 
+ 6. ESLint: It is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code. ESLint: Standard is configuard to the better Linting & Formatting of code.
+ 7. Helmet: Helmet helps you secure your Express apps by setting various HTTP headers.
+ 8. Lodash - A modern JavaScript utility library delivering modularity, performance & extras.
+ 9. MomentJs - A lightweight JavaScript date library for parsing, validating, manipulating, and formatting dates.
+ 10. Multer - Multer is a node.js middleware for handling `multipart/form-data`, which is primarily used for uploading files
+ 11. Nodemon: A utility that will monitor for any changes in your source and automatically restart your server. Perfect for development.
+ 12. winston - It is designed to be a simple and universal logging library.
+ 13. winston-daily-rotate-file - For log file rotation on a daily basis.
 
 ## Install
 
@@ -43,6 +46,7 @@ npm run dev
 ## Production
 
 ```sh
+npm run build
 npm start
 ```
 
