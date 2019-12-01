@@ -2,6 +2,7 @@
 node_modules/
 npm-debug.log*
 logs/
+build/
 
 # Editor directories and files
 .idea
@@ -10,3 +11,4 @@ logs/
 *.njsproj
 *.sln
 *.vscode
+package-lock.json

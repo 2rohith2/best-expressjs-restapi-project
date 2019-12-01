@@ -1,7 +1,8 @@
-const { createLogger, format, transports } = require('winston');
+import { createLogger, format, transports } from 'winston';
+import fs from 'fs';
+import 'winston-daily-rotate-file';
+
 const { combine, colorize, json, printf, timestamp } = format;
-require('winston-daily-rotate-file');
-const fs = require('fs');
 const logsDirectory = 'logs';
 
 if (!fs.existsSync(logsDirectory)) {

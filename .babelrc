@@ -1,0 +1,12 @@
+{
+  "presets": [
+    "@babel/preset-env",
+    "minify"
+  ],
+  "plugins": [
+    "minify-builtins",
+    "minify-constant-folding",
+    "minify-simplify"
+  ],
+  "comments": false
+}

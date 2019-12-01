@@ -3,24 +3,51 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "npx supervisor ./bin/www",
-    "start": "node ./bin/www"
+    "build": "npm run clean && babel -d ./build ./src",
+    "clean": "rm -rf build && mkdir build",
+    "lint": "eslint -c .eslintrc ./ src",
+    "dev": "nodemon --exec babel-node ./src/bin/www",
+    "start": "node ./build/bin/www.js",
+    "test": "eslint src/**"
   },
   "dependencies": {
     "bcrypt": "^3.0.6",
     "body-parser": "^1.19.0",
     "compression": "^1.7.4",
-    "debug": "~2.6.9",
     "express": "~4.16.1",
     "helmet": "^3.21.2",
+    "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
+    "mongodb": "^3.3.4",
     "multer": "^1.4.2",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "uuid": "^3.3.3",
     "winston": "^3.2.1",
     "winston-daily-rotate-file": "^4.2.1"
   },
-  "description": "This project is for Backend Service for Heyo.",
+  "description": "This project is for Backend Service with accepts only RestAPI Communication.",
   "main": "app.js",
   "author": "Rohith Kumar E S",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.7.4",
+    "@babel/core": "^7.7.4",
+    "@babel/node": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "babel-plugin-minify-builtins": "^0.5.0",
+    "babel-plugin-minify-constant-folding": "^0.5.0",
+    "babel-plugin-minify-simplify": "^0.5.1",
+    "babel-preset-minify": "^0.5.1",
+    "debug": "~2.6.9",
+    "eslint": "^6.7.2",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "nodemon": "^2.0.1"
+  }
 }
