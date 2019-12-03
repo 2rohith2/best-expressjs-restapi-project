@@ -2,10 +2,10 @@ import bodyParser from 'body-parser';
 import compression from 'compression';
 import express from 'express';
 import helmet from 'helmet';
-import logger from './utils/logger';
+import logger from 'Utils/logger';
 
-import rootRouter from './routes/index';
-import usersRouter from './routes/users';
+import rootRouter from 'Routes/index';
+import usersRouter from 'Routes/users';
 
 const app = express();
 // CORS Setting

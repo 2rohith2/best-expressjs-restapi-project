@@ -6,7 +6,16 @@
   "plugins": [
     "minify-builtins",
     "minify-constant-folding",
-    "minify-simplify"
+    "minify-simplify",
+    [
+      "module-resolver",
+      {
+        "alias": {
+          "Utils": "./src/utils",
+          "Routes": "./src/routes"
+        }
+      }
+    ]
   ],
   "comments": false
 }

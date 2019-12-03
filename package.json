@@ -39,6 +39,7 @@
     "babel-plugin-minify-builtins": "^0.5.0",
     "babel-plugin-minify-constant-folding": "^0.5.0",
     "babel-plugin-minify-simplify": "^0.5.1",
+    "babel-plugin-module-resolver": "^3.2.0",
     "babel-preset-minify": "^0.5.1",
     "debug": "~2.6.9",
     "eslint": "^6.7.2",
