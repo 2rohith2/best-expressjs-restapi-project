@@ -5,10 +5,12 @@
   "scripts": {
     "build": "npm run clean && babel -d ./build ./src",
     "clean": "rm -rf build && mkdir build",
-    "lint": "eslint -c .eslintrc ./ src",
     "dev": "nodemon --exec babel-node ./src/bin/www",
-    "start": "node ./build/bin/www.js",
-    "test": "eslint src/**"
+    "lint": "eslint src/**",
+    "list": "pm2 list",
+    "restart": "pm2 restart all",
+    "start": "pm2 start ./build/bin/www.js --name 'Backend Server' -i max",
+    "stop": "pm2 stop all"
   },
   "dependencies": {
     "bcrypt": "^3.0.6",
@@ -23,6 +25,7 @@
     "multer": "^1.4.2",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
+    "pm2": "^4.2.0",
     "uuid": "^3.3.3",
     "winston": "^3.2.1",
     "winston-daily-rotate-file": "^4.2.1"
