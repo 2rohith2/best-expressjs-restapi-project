@@ -35,15 +35,15 @@ app.use(helmet.hidePoweredBy());
 app.use('/', rootRouter);
 app.use('/users', usersRouter);
 
-// catch 404 and forward to error handler
 app.use(function (req, res, next) {
   logger.log({ level: 'error', message: 'API Not Found', request: req.url });
-  res.json({ status: 'API Not Found' });
+  res.status(404).json({ status: 'API Not Found' });
 });
 
-// error handler
 app.use(function (err, req, res, next) {
+  logger.log({ level: 'error', message: 'API Not Found', request: req.url, error: err });
   console.error('Error in Application', err);
+  res.status(500).json({ status: 'Error in server' });
 });
 
 module.exports = app;

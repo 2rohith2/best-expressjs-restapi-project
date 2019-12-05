@@ -2,6 +2,11 @@ import express from 'express';
 import logger from 'Utils/logger';
 const router = express.Router();
 
+router.use((req, res, next) => {
+  logger.log({ level: 'info', message: 'User Route Middleware', request: req.body });
+  next();
+});
+
 router.get('/', (req, res, next) => {
   res.json({ status: 'User Details' });
 });
@@ -12,7 +17,7 @@ router.get('/:id', (req, res, next) => {
 });
 
 router.delete('/:id', (req, res, next) => {
-  logger.log({ level: 'info', message: `User Details Delete request ${req.params.id}`, request: req.params });
+  logger.log({ level: 'info', message: `User Delete request ${req.params.id}`, request: req.params });
   res.json({ status: `User ${req.params.id} Details deleted` });
 });
 
