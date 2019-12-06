@@ -1,14 +1,11 @@
 {
   "author": "Rohith Kumar E S",
   "description": "This project is for Backend Service with accepts only RestAPI Communication.",
-  "name": "heyo-backend",
+  "name": "rest-api-backend",
   "main": "app.js",
   "license": "ISC",
   "version": "0.0.0",
   "private": true,
-  "jest": {
-    "verbose": true
-  },
   "scripts": {
     "build": "npm run clean && babel -d ./build ./src",
     "clean": "rm -rf build && mkdir build",
@@ -18,7 +15,14 @@
     "restart": "pm2 restart all",
     "start": "pm2 start ./build/bin/www.js --name 'Backend Server' -i max",
     "stop": "pm2 stop all",
-    "test": "jest"
+    "test": "jest --runInBand --detectOpenHandles --forceExit",
+    "test:watch": "jest --runInBand --detectOpenHandles --forceExit --watch"
+  },
+  "jest": {
+    "verbose": true,
+    "setupFiles": [
+      "./test/setup.js"
+    ]
   },
   "dependencies": {
     "bcrypt": "^3.0.6",
@@ -42,7 +46,9 @@
     "@babel/cli": "^7.7.4",
     "@babel/core": "^7.7.4",
     "@babel/node": "^7.7.4",
+    "@babel/plugin-transform-runtime": "^7.7.4",
     "@babel/preset-env": "^7.7.4",
+    "@babel/runtime": "^7.7.4",
     "babel-plugin-minify-builtins": "^0.5.0",
     "babel-plugin-minify-constant-folding": "^0.5.0",
     "babel-plugin-minify-simplify": "^0.5.1",
@@ -58,6 +64,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "jest": "^24.9.0",
-    "nodemon": "^2.0.1"
+    "nodemon": "^2.0.1",
+    "supertest": "^4.0.2"
   }
 }
