@@ -8,7 +8,7 @@
   "private": true,
   "scripts": {
     "build": "npm run clean && babel -d ./build ./src",
-    "clean": "rm -rf build && mkdir build",
+    "clean": "rm -rf build && rm -rf coverage",
     "dev": "nodemon --exec babel-node ./src/bin/www",
     "lint": "eslint src/**",
     "list": "pm2 list",
@@ -20,12 +20,25 @@
   },
   "jest": {
     "verbose": true,
-    "testPathIgnorePatterns": [
-      "/node_modules/",
-      "/build"
+    "collectCoverage": true,
+    "coverageReporters": [
+      "json",
+      "html"
     ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80
+      }
+    },
     "setupFiles": [
       "./test/setup.js"
+    ],
+    "testPathIgnorePatterns": [
+      "/build",
+      "/coverage",
+      "/node_modules"
     ]
   },
   "dependencies": {
