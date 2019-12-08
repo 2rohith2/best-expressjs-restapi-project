@@ -1,17 +1,6 @@
-// Global Pattern
-test('Get Users Route', async () => {
-  const response = await global.server.get('/users');
-  expect(response.status).toBe(200);
+describe('Testing Users Route', () => {
+  test('Response within 200ms', async () => {
+    const response = await global.server.get('/users');
+    expect(response.statusCode).toBe(200);
+  });
 });
-
-// Individual Pattern, but unable to shutdown the ExpressJs before next test case execution
-
-// import app from '../bin/www';
-// import supertest from 'supertest';
-// const request = supertest(app);
-
-// test('Get Users Route', async (done) => {
-//   const response = await request.get('/users');
-//   expect(response.status).toBe(200);
-//   done();
-// });

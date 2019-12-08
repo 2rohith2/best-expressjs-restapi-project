@@ -15,11 +15,15 @@
     "restart": "pm2 restart all",
     "start": "pm2 start ./build/bin/www.js --name 'Backend Server' -i max",
     "stop": "pm2 stop all",
-    "test": "jest --runInBand --detectOpenHandles --forceExit",
-    "test:watch": "jest --runInBand --detectOpenHandles --forceExit --watch"
+    "test": "NODE_ENV=test jest --detectOpenHandles",
+    "test:watch": "NODE_ENV=test jest --detectOpenHandles --watch"
   },
   "jest": {
     "verbose": true,
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/build"
+    ],
     "setupFiles": [
       "./test/setup.js"
     ]
