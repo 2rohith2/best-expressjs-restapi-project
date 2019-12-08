@@ -1,5 +1,5 @@
 import express from 'express';
-import logger from 'Utils/logger';
+import logger from 'Middlewares/logger';
 const router = express.Router();
 
 router.get('/', (req, res, next) => {

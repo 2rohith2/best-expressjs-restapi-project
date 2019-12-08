@@ -2,7 +2,7 @@ import bodyParser from 'body-parser';
 import compression from 'compression';
 import express from 'express';
 import helmet from 'helmet';
-import logger from 'Utils/logger';
+import logger from 'Middlewares/logger';
 
 import rootRouter from 'Routes/index';
 import usersRouter from 'Routes/users';

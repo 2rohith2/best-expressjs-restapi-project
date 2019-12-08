@@ -8,7 +8,7 @@
   "private": true,
   "scripts": {
     "build": "npm run clean && babel -d ./build ./src",
-    "clean": "rm -rf build && rm -rf coverage",
+    "clean": "rm -rf build && rm -rf coverage && rm -rf logs",
     "dev": "nodemon --exec babel-node ./src/bin/www",
     "lint": "eslint src/**",
     "list": "pm2 list",
@@ -33,7 +33,7 @@
       }
     },
     "setupFiles": [
-      "./test/setup.js"
+      "./src/middleware/jestSetup.js"
     ],
     "testPathIgnorePatterns": [
       "/build",

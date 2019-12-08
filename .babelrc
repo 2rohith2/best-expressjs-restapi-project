@@ -18,8 +18,9 @@
       "module-resolver",
       {
         "alias": {
-          "Utils": "./src/utils",
-          "Routes": "./src/routes"
+          "Middlewares": "./src/middleware",
+          "Routes": "./src/routes",
+          "Bin": "./src/bin"
         }
       }
     ]
