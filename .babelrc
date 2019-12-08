@@ -6,9 +6,6 @@
       ]
     }
   },
-  "ignore": [
-    "**/*.test.js"
-  ],
   "presets": [
     "@babel/preset-env",
     "minify"
