@@ -7,9 +7,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "npm run clean && babel --ignore '**/*.test.js' -d ./build ./src",
-    "clean": "rm -rf build && rm -rf coverage && rm -rf logs",
+    "build": "babel --ignore '**/*.test.js' -d ./build ./src",
+    "clean": "rm -rf build && rm -rf coverage && npm run delete",
     "dev": "nodemon --exec babel-node ./src/bin/www",
+    "delete": "pm2 delete all",
     "lint": "eslint src/**",
     "list": "pm2 list",
     "restart": "pm2 restart all",
