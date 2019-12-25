@@ -41,9 +41,7 @@ app.use(function (req, res, next) {
 });
 
 app.use(function (err, req, res, next) {
-  logger.log({ level: 'error', message: 'API Not Found', request: req.url, error: err });
-  console.error('Error in Application', err);
-  res.status(500).json({ status: 'Error in server' });
+  console.log('Got error', err.message);
 });
 
 module.exports = app;

@@ -3,7 +3,7 @@ import logger from 'Middlewares/logger';
 const router = express.Router();
 
 router.get('/', (req, res, next) => {
-  res.json({ info: 'Root URL' });
+  throw new Error('catch this error');
 });
 
 router.get('/login', (req, res, next) => {
